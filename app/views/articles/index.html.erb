@@ -1,2 +1,9 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<%= turbo_stream_from :articles %>
+​
+<%= turbo_frame_tag :articles_form do %>
+  <%= render 'articles/form', article: @article %>
+<% end %>
+​
+<%= turbo_frame_tag :article do %>
+  <%= render @articles %>
+<% end %>
